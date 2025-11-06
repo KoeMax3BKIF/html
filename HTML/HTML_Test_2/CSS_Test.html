@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=divice-width, initial-scale=1.0">
+    <title>CSS-Test</title>
+    <style>
+        body {
+            background-color: aquamarine;
+            color: white;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        main {
+            background-color: rgb(52, 118, 103);
+            padding: 30px;
+            margin: auto;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            max-width: 80%;
+            border-radius: 8px;
+            box-shadow: 5px 10px 10px black;
+        }
+        p {
+            
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        #liste {
+            text-align: center;
+        }
+        ul {
+            display: inline-block;
+            text-align: left;
+        }
+
+        table {
+            text-align: center;
+            border-collapse: collapse;
+            width: auto;
+            margin: auto;
+            margin-top: 30px;
+        }
+        th,td {
+            border: 1px solid black;
+            padding: 6px ;
+        }
+        thead {
+            background-color: rgb(33, 79, 63);
+        }
+
+        .roteFarbe {
+            color: rgb(255, 225, 0);
+            
+        }
+
+        #impressum {
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(235, 32, 184);
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>CSS-Test</h1>
+            <hr>
+        </header>
+
+        <section>
+
+            <div>
+                <h2>Absatz 1</h2>
+                <p class="roteFarbe">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima rem quibusdam numquam ipsam rerum! Doloribus unde quos eveniet omnis! Dolore vel ratione velit voluptatibus ipsa a amet laborum! Fuga, ipsam.</p>
+                <h2>Absatz 2</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni atque aspernatur tenetur sit, dignissimos quae porro aliquid eum cupiditate cum autem, suscipit, libero consectetur doloremque! Quo a at consequatur aliquid.</p>
+                <h2>Absatz 3</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor obcaecati distinctio accusamus quibusdam fuga deleniti, necessitatibus iusto repellat expedita cumque, earum nisi itaque mollitia veritatis sed placeat architecto iste consectetur?</p>
+                <h2 class="roteFarbe">Absatz 4</h2>
+                <p class="roteFarbe">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam autem facilis ut itaque alias quod aliquam assumenda! Cumque ipsam, amet quia labore, provident perspiciatis eligendi nam nisi, tempora dolorum incidunt.</p>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tag</th>
+                        <th>2:30</th>
+                        <th>4:40</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Montag</td>
+                        <td>Pos1</td>
+                        <td>CABS1</td>
+                    </tr>
+                    <tr>
+                        <td>Donnerstag</td>
+                        <td>WMC</td>
+                        <td>DBI</td>
+                    </tr>
+                </tbody> 
+                <tfoot>
+                    <tr>
+                        <td>Summe</td>
+                        <td>4h</td>
+                        <td>4h</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </section>
+
+        <footer>
+            <h2 id="impressum">Impressum</h2>
+            
+            <div id="liste">
+                <ul>
+                    <li>Name</li>
+                    <li>Adresse</li>
+                    <li>Tel-Nummer</li>
+                </ul>
+            </div>
+
+            <form>
+                <button formaction="Top">Top</button>
+            </form>
+            <a href="Seite2.html" target="_blank">Seite 2</a>
+        </footer>
+    </main>
+</body>
