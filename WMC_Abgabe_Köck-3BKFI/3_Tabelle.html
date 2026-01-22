@@ -2,7 +2,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=divice-width, initial-scale=1.0">
-    <title>Start</title>
+    <title>Filamente</title>
+    <link rel="icon" type="image/png" href="3D-Druck_Favicon.png">
     <link rel="stylesheet" href="CSS-Style.css">
 </head>
 
@@ -27,10 +28,14 @@
         <h2>Inhalt</h2>
             <ul>
                 <li><a href="#ab1">Empfolene Filamente</a></li>
-                <li><a href="#tabelle">Filamenttabelle</a></li>
+                <li><a href="#ab2">PLA</a></li>
+                <li><a href="#ab3">PETG</a></li>
+                <li><a href="#ab4">TPU</a></li>
+                <li><a href="#tabelle">Filament/Temperaturtabelle</a></li>
                 <li><a href="#impressum">Impressum</a></li>
             </ul>
         </nav>
+
 
         <section>
 
@@ -39,11 +44,18 @@
                 <h1>Filamente für den Einstieg</h1>
                 <hr>
                 <h2 id="ab1">Empfolene Filamente</h2>
-                <p class="roteFarbe">Filamente für den Einstieg in den 3D-Druck sind PLA, PETG und TPU drei solide Optionen. PLA ist einfach zu verarbeiten und ideal für Anfänger, PETG bietet etwas mehr Stabilität und Temperaturbeständigkeit, und TPU ist ein flexibles Filament für spezielle Anwendungen. In der folgenden Tabelle findest du die typischen Druck- und Heizbetttemperaturen.</p>
+                <p>Es gibt eine Vielzahl an 3D-Druck-Filamenten, die sich in Eigenschaften und Einsatzzweck unterscheiden. Je nach Material variieren Drucktemperatur, Stabilität, Flexibilität oder Umweltverträglichkeit. So findet sich für fast jeden Anwendungsfall das passende Filament. Filamente für den Einstieg in den 3D-Druck sind PLA, PETG und TPU drei solide Optionen.</p>
+                <h2 id="ab2">PLA</h2>
+                <p>Polylactid (PLA) ist besonders einsteigerfreundlich, da es sich leicht drucken lässt und kaum verzogen wird. Es wird aus nachwachsenden Rohstoffen gewonnen, ist biologisch abbaubar und eignet sich ideal für Prototypen, Dekor-Objekte und Alltagsgegenstände.</p>
+                <h2 id="ab3">PETG</h2>
+                <p>Polyethylenterephthalat-Glykol (PETG) ist die robuste Alternative, die sich dennoch leicht verarbeiten lässt. Es bietet höhere Stabilität als PLA und ist widerstandsfähig gegenüber Wasser und Chemikalien. Dadurch eignet es sich gut für funktionale Bauteile, Halterungen oder Behälter.</p>
+                <h2 id="ab4">TPU</h2>
+                <p>Thermoplastisches Polyurethan (TPU) ist ein flexibles Filament mit gummiartigen Eigenschaften. Es ist etwas anspruchsvoller zu drucken als PLA, bietet aber Elastizität, ideal für Dichtungen oder flexible Schutzhüllen. TPU sollte trocken gelagert werden, da es Feuchtigkeit anzieht, um bestmögliche Druckergebnisse zu erzielen.</p>
                 <hr>
             </div>
 
-            <table id="tabelle">
+            <h2 id="tabelle">Filament/Temperaturtabelle</h2>
+            <table>
                 <thead>
                     <tr>
                         <th>Filament</th>
@@ -71,14 +83,16 @@
                     </tr>
                 </tfoot>
             </table>
+            <p>Die genauen Temperaturen hängen vom Hersteller, Drucker und der Druckgeschwindigkeit ab. Die angegebenen Werte sind Richtwerte und sollten bei Bedarf angepasst werden.</p>
 
         </section>
+
 
         <footer>
             <hr>
             <h2 id="impressum">Impressum</h2>
             
-            <div id="liste">
+            <div id="liste" class="impressum">
                 <ul>
                     <li>Name</li>
                     <li>Adresse</li>
@@ -86,15 +100,16 @@
                 </ul>
             </div>
 
-            <form>
+            <form class="top-button">
                 <button onclick="location.href='#top'">Top</button>
             </form>
             <hr>
         </footer>
 
+
         <nav class="Seiten-nav">
             <ul>
-                <li><a href="1_Satrt.html"><button>1</button></a></li>
+                <li><a href="insex.html"><button>1</button></a></li>
                 <li><a href="2_Bilder.html"><button>2</button></a></li>
                 <li><button class="current" disabled>3</button></li>
             </ul>
