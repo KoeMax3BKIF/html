@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Functions – Übungen</title>
+    <link rel="icon" type="image/png" href="JS_HÜ_WMC_Favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main id="top">
+
+    <h1>Arrow Functions</h1>
+    <p class="subtitle">Übungen mit <strong>filter</strong>, <strong>map</strong> und <strong>reduce</strong></p>
+
+    <hr>
+
+    <!-- Inhaltsverzeichnis -->
+    <nav class="toc-nav">
+        <h2>Inhalt</h2>
+        <ul>
+            <li><a href="#datensatz">Datensatz</a></li>
+            <li><a href="#task1">Task 1 – filter</a></li>
+            <li><a href="#task2">Task 2 – map</a></li>
+            <li><a href="#task3">Task 3 – filter + map</a></li>
+            <li><a href="#task4">Task 4 – reduce</a></li>
+            <li><a href="#task5">Task 5 – Chaining (Bonus)</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <!-- Fortschritt -->
+    <div class="progress-wrap">
+        <div class="progress-label" id="progressLabel">Fortschritt: 0 / 5</div>
+        <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Datensatz -->
+    <section id="datensatz" class="task-section">
+        <h2>Datensatz</h2>
+        <p class="task-desc">Die Variable <code>students</code> steht in allen Tasks zur Verfügung.</p>
+
+        <div class="table-scroll">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Alter</th>
+                        <th>Größe</th>
+                        <th>Geburtsdatum</th>
+                        <th>Herkunft</th>
+                        <th>Gewicht</th>
+                        <th>Note</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Lukas Huber</td><td>28</td><td>182</td><td>1997-05-12</td><td>Österreich</td><td>78.5</td><td>1</td></tr>
+                    <tr><td>2</td><td>Sarah Meyer</td><td>34</td><td>165</td><td>1991-11-20</td><td>Deutschland</td><td>62.0</td><td>5</td></tr>
+                    <tr><td>3</td><td>Mateo Rossi</td><td>19</td><td>175</td><td>2006-02-28</td><td>Italien</td><td>70.2</td><td>4</td></tr>
+                    <tr><td>4</td><td>Elena Fischer</td><td>45</td><td>170</td><td>1980-08-05</td><td>Schweiz</td><td>65.8</td><td>2</td></tr>
+                    <tr><td>5</td><td>Julian Novak</td><td>22</td><td>190</td><td>2003-12-15</td><td>Österreich</td><td>85.3</td><td>3</td></tr>
+                    <tr><td>6</td><td>Sophie Dubois</td><td>31</td><td>168</td><td>1994-03-10</td><td>Frankreich</td><td>59.5</td><td>1</td></tr>
+                    <tr><td>7</td><td>Erik Lindström</td><td>52</td><td>185</td><td>1973-10-22</td><td>Schweden</td><td>92.1</td><td>5</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <hr>
+
+    <!-- Task 1 -->
+    <section id="task1" class="task-section">
+        <h2>Task 1 <span class="badge">filter</span></h2>
+        <p class="task-desc">
+            Finde alle Studierenden, die bestanden haben (<code>note &lt;= 4</code>).
+            Speichere das Ergebnis in <code>passed</code>.
+        </p>
+        <textarea id="code-1" rows="2" spellcheck="false" placeholder="const passed = students.filter(...);"></textarea>
+        <div class="btn-row">
+            <button onclick="runTask(1)">Ausfuhren</button>
+            <button class="btn-hint" onclick="toggleHint(1)">Hinweis</button>
+            <button class="btn-solution" onclick="showSolution(1)">Lösung</button>
+        </div>
+        <div class="hint-box" id="hint-1">students.filter(s => s.note &lt;= 4)
+→ Behalte nur jene, bei denen die Bedingung true ergibt.</div>
+        <div class="output-box" id="result-1"></div>
+    </section>
+
+    <hr>
+
+    <!-- Task 2 -->
+    <section id="task2" class="task-section">
+        <h2>Task 2 <span class="badge map">map</span></h2>
+        <p class="task-desc">
+            Erstelle ein Array von Strings im Format <code>"Lukas Huber (28)"</code>.
+            Speichere es in <code>labels</code>.
+        </p>
+        <textarea id="code-2" rows="2" spellcheck="false" placeholder="const labels = students.map(...);"></textarea>
+        <div class="btn-row">
+            <button onclick="runTask(2)">Ausfuhren</button>
+            <button class="btn-hint" onclick="toggleHint(2)">Hinweis</button>
+            <button class="btn-solution" onclick="showSolution(2)">Lösung</button>
+        </div>
+        <div class="hint-box" id="hint-2">students.map(s => `${s.name} (${s.alter})`)
+→ Template Literal: Backticks mit ${} fur Variablen.</div>
+        <div class="output-box" id="result-2"></div>
+    </section>
+
+    <hr>
+
+    <!-- Task 3 -->
+    <section id="task3" class="task-section">
+        <h2>Task 3 <span class="badge">filter</span> + <span class="badge map">map</span></h2>
+        <p class="task-desc">
+            Extrahiere aus den bestandenen Studierenden (<code>note &lt;= 4</code>) nur deren Namen
+            in ein Array <code>passedNames</code>.
+        </p>
+        <textarea id="code-3" rows="3" spellcheck="false" placeholder="const passedNames = students.filter(...).map(...);"></textarea>
+        <div class="btn-row">
+            <button onclick="runTask(3)">Ausfuhren</button>
+            <button class="btn-hint" onclick="toggleHint(3)">Hinweis</button>
+            <button class="btn-solution" onclick="showSolution(3)">Lösung</button>
+        </div>
+        <div class="hint-box" id="hint-3">Verkette beide Methoden:
+students.filter(s => s.note &lt;= 4).map(s => s.name)</div>
+        <div class="output-box" id="result-3"></div>
+    </section>
+
+    <hr>
+
+    <!-- Task 4 -->
+    <section id="task4" class="task-section">
+        <h2>Task 4 <span class="badge reduce">reduce</span></h2>
+        <p class="task-desc">
+            Berechne die Durchschnittsnote aller Studierenden.
+            Speichere das Ergebnis in <code>averageGrade</code>.
+        </p>
+        <textarea id="code-4" rows="2" spellcheck="false" placeholder="const averageGrade = students.reduce(...);"></textarea>
+        <div class="btn-row">
+            <button onclick="runTask(4)">Ausfuhren</button>
+            <button class="btn-hint" onclick="toggleHint(4)">Hinweis</button>
+            <button class="btn-solution" onclick="showSolution(4)">Lösung</button>
+        </div>
+        <div class="hint-box" id="hint-4">Erst alle Noten summieren, dann durch die Anzahl teilen:
+students.reduce((sum, s) => sum + s.note, 0) / students.length</div>
+        <div class="output-box" id="result-4"></div>
+    </section>
+
+    <hr>
+
+    <!-- Task 5 -->
+    <section id="task5" class="task-section">
+        <h2>Task 5 – Bonus <span class="badge chain">Chaining</span></h2>
+        <p class="task-desc">
+            In einer einzigen Kette: Finde die Namen aller Studierenden mit
+            <code>alter &gt;= 17</code> die bestanden haben (<code>note &lt;= 4</code>),
+            verbunden als kommaseparierten String. Speichere in <code>result</code>.
+        </p>
+        <textarea id="code-5" rows="4" spellcheck="false" placeholder="const result = students.filter(...).filter(...).map(...).join(...);"></textarea>
+        <div class="btn-row">
+            <button onclick="runTask(5)">Ausfuhren</button>
+            <button class="btn-hint" onclick="toggleHint(5)">Hinweis</button>
+            <button class="btn-solution" onclick="showSolution(5)">Lösung</button>
+        </div>
+        <div class="hint-box" id="hint-5">Mehrere Methoden hintereinander hängen:
+students
+  .filter(s => s.alter >= 17)
+  .filter(s => s.note &lt;= 4)
+  .map(s => s.name)
+  .join(", ")</div>
+        <div class="output-box" id="result-5"></div>
+    </section>
+
+    <hr>
+
+        <div class="top-button"><button onclick="scrollToTop()">nach oben</button></div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
